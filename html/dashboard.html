@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../CMS.js" type="module" defer></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>Dashboard - CMS</title>
 </head>
@@ -23,17 +24,25 @@
             <th class="px-16">ID</th>
             <th class="px-16">Nome do Filme</th>
             <th class="px-16">Data de Lançamento</th>
-            <th class="px-16">Disponivel</th>
+            <!-- <th class="px-16">Disponivel</th> -->
             <th class="px-16">Preço</th>
             <th class="px-16">Ações</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="tbl_filmes">
+          <tr>
+            <td id="id" class="text-blue-500 px-16">1</td>
+            <td id="nome" class="px-16">O Segredo do Vale</td>
+            <td id="lancamento" class="text-blue-500 px-16">25/08/2022</td>
+            <!-- <td id="disponibilidade" class="px-16">SIM</td> -->
+            <td id="preco" class="text-blue-500 px-16">R$29,99</td>
+            <td id = "acoes" class="flex flex-row px-16 gap-4"><img src="../img/write-svgrepo-com 1.svg" alt="Editar Dados"><img src="../img/trash-bin-minimalistic-svgrepo-com 1.svg" alt="DELETAR"></td>
+          </tr>
           <tr>
             <td class="text-blue-500 px-16">1</td>
             <td class="px-16">O Segredo do Vale</td>
             <td class="text-blue-500 px-16">25/08/2022</td>
-            <td class="px-16">SIM</td>
+            <!-- <td class="px-16">SIM</td> -->
             <td class="text-blue-500 px-16">R$29,99</td>
             <td class="flex flex-row px-16 gap-4"><img src="../img/write-svgrepo-com 1.svg" alt="Editar Dados"><img src="../img/trash-bin-minimalistic-svgrepo-com 1.svg" alt="DELETAR"></td>
           </tr>
@@ -41,15 +50,7 @@
             <td class="text-blue-500 px-16">1</td>
             <td class="px-16">O Segredo do Vale</td>
             <td class="text-blue-500 px-16">25/08/2022</td>
-            <td class="px-16">SIM</td>
-            <td class="text-blue-500 px-16">R$29,99</td>
-            <td class="flex flex-row px-16 gap-4"><img src="../img/write-svgrepo-com 1.svg" alt="Editar Dados"><img src="../img/trash-bin-minimalistic-svgrepo-com 1.svg" alt="DELETAR"></td>
-          </tr>
-          <tr>
-            <td class="text-blue-500 px-16">1</td>
-            <td class="px-16">O Segredo do Vale</td>
-            <td class="text-blue-500 px-16">25/08/2022</td>
-            <td class="px-16">SIM</td>
+            <!-- <td class="px-16">SIM</td> -->
             <td class="text-blue-500 px-16 ">R$29,99</td>
             <td class="flex flex-row px-16 gap-4"><img src="../img/write-svgrepo-com 1.svg" alt="Editar Dados"><img src="../img/trash-bin-minimalistic-svgrepo-com 1.svg" alt="DELETAR"></td>
           </tr>
@@ -59,3 +60,28 @@
       
 </body>
 </html>
+
+<div class="addMovie flex flex-col w-96 h-96 bg-[#c0c0c0] justify-center items-center ">
+ <h2 class="text-[#5C2786] font-bold">Inserir Novo Filme</h2>
+
+<form>
+  <label for="nome">Nome do Filme:</label><br>
+  <input type="text" id="nome" name="nome"><br>
+
+  <label for="data_lancamento">Data de Lançamento:</label><br>
+  <input type="date" id="data_lancamento" name="data_lancamento"><br>
+
+  <label for="disponibilidade">Disponibilidade:</label><br>
+  <select id="disponibilidade" name="disponibilidade">
+    <option value="disponivel">Disponível</option>
+    <option value="indisponivel">Indisponível</option>
+  </select><br>
+
+  <label for="preco">Preço (em R$):</label><br>
+  <input type="number" id="preco" name="preco" step="0.01"><br><br>
+
+  <button class="flex w-32 h-8 justify-center rounded-md bg-sky-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#5C2786] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Enviar</button>
+
+</form>
+
+</div>
