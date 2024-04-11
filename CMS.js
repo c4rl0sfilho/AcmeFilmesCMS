@@ -32,11 +32,18 @@ async function criarLinhaFilme() {
 
 //ADICIONAR AS IMAGENS DAS AÇÔES
 
-        // const acoes = document.createElement('td')
-        // acoes.classList.add('text-blue-500', 'px-16')
-        // acoes.src = 
+        const acoes = document.createElement('td')
+        acoes.classList.add('flex', 'flex-row', 'px-16' ,'gap-4')
 
-        tr.replaceChildren(id, nome, lancamento, preco)
+        const editar = document.createElement('img')
+        editar.src = '../img/write-svgrepo-com 1.svg'
+
+        const lixeira = document.createElement('img')
+        lixeira.src = '../img/trash-bin-minimalistic-svgrepo-com 1.svg'
+
+        acoes.appendChild(lixeira)
+        acoes.appendChild(editar)
+        tr.replaceChildren(id, nome, lancamento, preco, acoes)
         tbl_filmes.appendChild(tr)
         
     });
