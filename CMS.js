@@ -4,6 +4,11 @@ console.log('dvfdsgbsdfb');
 
 const tbl_filmes = document.getElementById('tbl_filmes')
 
+function criarData(data){
+
+
+}
+
 async function criarLinhaFilme() {
 
     const filmes = await getFilmes()
@@ -28,7 +33,7 @@ async function criarLinhaFilme() {
 
         const preco = document.createElement('td')
         preco.classList.add('text-blue-500', 'px-16')
-        preco.textContent = filme.valor_unitario
+        preco.textContent = Number(filme.valor_unitario).toFixed(2)
 
 //ADICIONAR AS IMAGENS DAS AÇÔES
 
