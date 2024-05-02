@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./login.js" type="module" defer></script>
+    <script src="./login.js" defer></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>AcmeFilmes - CMS</title>
 </head>
@@ -14,7 +14,7 @@
         </div>
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm py-6">
-          <form class="space-y-6" action="./html/dashboard.html" method="POST">
+          <form class="space-y-6" action="./html/dashboard.html">
             <div>
               <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
               <div class="mt-2">
@@ -30,6 +30,7 @@
               </div>
             </div>
             <div class="flex justify-center">
+              <a href="./html/dashboard.html"></a>
               <button class="flex w-100 justify-center rounded-md bg-sky-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#5C2786] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " onclick="validarLogin()">Sign in</button>
             </div>
           </form>

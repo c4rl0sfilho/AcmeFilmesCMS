@@ -1,3 +1,7 @@
+'use strict'
+
+
+
 export async function validarLogin(){
 
     let email = document.getElementById('email')
@@ -8,3 +12,4 @@ export async function validarLogin(){
         window.location.href = "./dashboard.html";
     }
 }
+
