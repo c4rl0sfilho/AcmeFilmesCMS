@@ -1,13 +1,7 @@
 'use strict'
 
-console.log('dvfdsgbsdfb');
-
 const tbl_filmes = document.getElementById('tbl_filmes')
 
-function criarData(data){
-
-
-}
 
 async function criarLinhaFilme() {
 
@@ -29,7 +23,18 @@ async function criarLinhaFilme() {
 
         const lancamento = document.createElement('td')
         lancamento.classList.add('text-blue-500', 'px-16')
-        lancamento.textContent = filme.data_lancamento
+        let isoString = filme.data_lancamento
+        
+        // Cria um objeto Date a partir da string ISO
+        const date = new Date(isoString);
+
+        // Extrai o dia, o mês e o ano
+        const day = String(date.getDate()).padStart(2, '0'); // Pad para garantir 2 dígitos
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Os meses vão de 0 a 11
+        const year = date.getFullYear();
+
+        // Formata para dd/mm/yyyy
+        lancamento.textContent = `${day}/${month}/${year}`
 
         const preco = document.createElement('td')
         preco.classList.add('text-blue-500', 'px-16')
