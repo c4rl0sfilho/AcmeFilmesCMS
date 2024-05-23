@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/genero.js" type="module" defer></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>AcmeFilmes</title>
+</head>
+<body id="body" class="bg-[#a5a5a5]">
+    <div class="h-24 w-full bg-[#d9d9d9] flex flex-row justify-between items-center ">
+        <img src="../img/AcmeMovies.png" alt="AcmeFilmes" class="px-6">
+        <div class="bg-sky-500 h-12 w-12 rounded-full mr-4">
+
+        </div>
+    </div>
+    <div class="main gap-8">
+
+        
+        <div class="w-full h-full flex pt-12 items-center justify-center">
+
+            <table class="table-fixed  ">
+                <thead class="border-b border-black">
+                <tr class="">
+                    <th class="px-16">ID</th>
+                    <th class="px-16">Nome do Gênero</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody id="tbl_generos">
+                    <!-- <tr>
+                        <td id="id" class="text-blue-500 px-16">1</td>
+                        <td id="nome" class="px-16">O Segredo do Vale</td>
+                        <td class="flex flex-row px-16 gap-4"><img src="../img/write-svgrepo-com 1.svg" alt="Editar Dados"><img src="../img/trash-bin-minimalistic-svgrepo-com 1.svg" alt="DELETAR"></td>
+                    </tr>  -->
+                </tbody>
+        </table>
+
+        <div class="addGenero  flex flex-col w-96 h-3/4 bg-[#c0c0c0] justify-center items-center "> 
+        <h2 class="text-[#5C2786] font-bold">Inserir Novo Gênero</h2>
+        
+        <form class="flex flex-col items-center pt-12">
+            <label for="nome">Nome do Gênero*:</label><br>
+            <input type="text" id="nome" name="nome"><br>
+        
+            <button class="flex w-32 h-8 justify-center rounded-md bg-sky-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#5C2786] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" id="botao-enviar">Enviar</button>
+        
+        </form>
+        
+        
+    </div>
+</div>
+</body>
+</html>

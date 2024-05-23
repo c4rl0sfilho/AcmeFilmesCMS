@@ -22,22 +22,25 @@
          <label for="nome">Nome do Filme*:</label><br>
          <input type="text" id="nome" name="nome"><br>
        
+         <label for="sinopse">Sinopse*:</label><br>
+         <input type="text" id="sinopse" name="sinopse" class="w-64  "><br>
+         
+         <label for="duracao">Duração*:</label><br>
+         <input type="time" id="duracao" name="duracao" class=""><br>
+       
          <label for="data_lancamento">Data de Lançamento*:</label><br>
          <input type="date" id="data_lancamento" name="data_lancamento"><br>
          
          <label for="data_relancamento">Data de Relançamento:</label><br>
          <input type="date" id="data_relancamento" name="data_relancamento"><br>
          
-         <label for="sinopse">Sinopse*:</label><br>
-         <input type="text" id="sinopse" name="sinopse" class="w-64 h-32 "><br>
-       
          <label for="preco">Preço (em R$)*:</label><br>
          <input type="number" id="preco" name="preco" step="0.01"><br><br>
         
          <label for="foto_capa">Foto Capa*:</label><br>
          <input type="text" id="foto_capa" name="foto_capa"><br><br>
        
-         <button class="flex w-32 h-8 justify-center rounded-md bg-sky-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#5C2786] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Enviar</button>
+         <button class="flex w-32 h-8 justify-center rounded-md bg-sky-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#5C2786] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" id="botao-enviar">Enviar</button>
        
        </form>
        
@@ -45,3 +48,59 @@
     </div>
 </body>
 </html>
+<script>
+
+    async function insertFilme(){
+
+    const JSONFilme = {}
+
+    const nomeDoFilme = document.getElementById('nome')
+    const nome = nomeDoFilme.value
+
+    const sinopseDoFilme = document.getElementById('sinopse')
+    const sinopse = sinopseDoFilme.value
+    
+    const duracaoDoFilme = document.getElementById('duracao')
+    const duracao = duracaoDoFilme.value
+
+    const dataLancamentoDoFilme = document.getElementById('data_lancamento')
+    const data_lancamento = dataLancamentoDoFilme.value
+
+    const dataRelancamentoDoFilme = document.getElementById('data_relancamento')
+    const data_relancamento = dataRelancamentoDoFilme.value
+    
+    const precoDoFilme = document.getElementById('preco')
+    const preco = precoDoFilme.value
+
+    const fotoDoFilme = document.getElementById('foto_capa')
+    const foto = fotoDoFilme.value
+
+    JSONFilme.nome = nome
+    JSONFilme.sinopse = sinopse
+    JSONFilme.duracao = duracao
+    JSONFilme.data_lancamento = data_lancamento
+    JSONFilme.data_relancamento = data_relancamento
+    JSONFilme.preco = preco
+    JSONFilme.foto = foto
+
+    
+    const url = 'http://localhost:8080/v2/acmeFilmes/filme'
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(JSONFilme)
+    }
+    const response = await fetch(url, options)
+    return response.ok 
+
+
+}
+
+ 
+
+
+    const botaoEnviar = document.getElementById('botao-enviar')
+    botaoEnviar.addEventListener('click', insertFilme)
+</script>
